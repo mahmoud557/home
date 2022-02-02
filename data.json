@@ -1,0 +1,124 @@
+{
+	"photo_price_lines":[
+        {"src":"home/icon/shutterstock.png","price":"4.5","link":"shutterstock"},	
+        {"src":"home/icon/freepik.jpg","price":"2","link":"freepik"},	
+        {"src":"home/icon/123rf.jpg","price":"5","link":"123rf"},	
+        {"src":"home/icon/adobestock.png","price":"4","link":"Adobestock"},	
+        {"src":"home/icon/alamy.png","price":"95","link":"Alamy photo"},
+
+        {"src":"home/icon/depositphotos.png","price":"6","link":"Depositphotos"}, 
+        {"src":"home/icon/envato.png","price":"2.5","link":"Elements Envato"},    
+        {"src":"home/icon/istockphoto.png","price":"6","link":"iStockphoto"},        
+        {"src":"home/icon/dreamstime.png","price":"5","link":"Dreamstime"},     
+        {"src":"home/icon/pngtree.jpg","price":"2","link":"PNGTree"},
+
+        {"src":"home/icon/storeshock.jpg","price":"2","link":"Storyblocks"},    
+        {"src":"home/icon/vecteezy.png","price":"2","link":"Vecteezy"},    
+        {"src":"home/icon/vectorgrove.jpg","price":"2","link":"Vectorgrove"},    
+        {"src":"home/icon/vectorstock.png","price":"6","link":"Vectorstock"},  
+        {"src":"home/icon/vexels.jpg","price":"2","link":"Vexels"},
+
+        {"src":"home/icon/lovepik.png","price":"2","link":"lovepik"}, 
+        {"src":"home/icon/stockgraphics.jpg","price":"2","link":"Stock-graphics"},    
+        {"src":"home/icon/storeshock.jpg","price":"2","link":"Storeshock"},        
+        {"src":"home/icon/pixelsquid.jpg","price":"5","link":"Pixelsquid"},     
+        {"src":"home/icon/rawpixel.png","price":"2.5","link":"Rawpixel"},
+
+        {"src":"home/icon/poweredtemplate.png","price":"2","link":"Powered Template"},
+        {"src":"home/icon/poweredtemplate.png","price":"2.5","link":"Powered Template adv"}, 
+        {"src":"home/icon/pikbest.jpg","price":"2","link":"Pikbest"},    
+        {"src":"home/icon/icon8.png","price":"2","link":"Icon8 Photo"},        
+        {"src":"home/icon/adobestock.png","price":"2.5","link":"Graphicpear"},     
+        {"src":"home/icon/ooopic.jpg","price":"3","link":"OOOPic"}                     
+	],
+	"video_price_lines":[
+        {"src":"home/icon/shutterstock.png","price":"202","link":"Shutterstock Video 4K Select"},	
+        {"src":"home/icon/shutterstock.png","price":"3","link":"Storyblocks HD"},	
+        {"src":"home/icon/shutterstock.png","price":"4","link":"Storyblocks 4K"},	
+        {"src":"home/icon/istockphoto.png","price":"158","link":"iStockphoto Video HD"},
+        {"src":"home/icon/istockphoto.png","price":"190","link":"iStockphoto Video 4K"},
+        {"src":"home/icon/depositphotos.png","price":"190","link":"Depositphotos Video 4K"},
+        {"src":"home/icon/depositphotos.png","price":"158","link":"Depositphotos Video HD"},
+        {"src":"home/icon/motionarray.jpg","price":"4","link":"Motionelements"}
+	],
+	"music_price_lines":[
+        {"src":"home/icon/soundsnap.png","price":"5.5","link":"Soundsnap"},	
+        {"src":"home/icon/epidemicsound.jpg","price":"2.5","link":"Epidemicsound"},	
+        {"src":"home/icon/epidemicsound.jpg","price":"4","link":"Epidemicsound Lossless Stems"},
+        {"src":"home/icon/motionarray.jpg","price":"3","link":"Motionarray"}
+	],
+    "subscrip_plans":[
+        {
+            "name":"Standard",
+            "price":"50",
+            "discription":"this is discrip",
+            "adventags":[
+                "No expire",
+                "Support all site",
+                "Images & Vector & Videos",
+                "Standard license",
+                "Quick access"
+            ]
+        },
+        {
+            "name":"Plus",
+            "price":"100",
+            "discription":"this is discrip",
+            "adventags":[
+                "No expire",
+                "Support all site",
+                "Images & Vector & Videos",
+                "Standard license",
+                "Quick access"
+            ]
+        },
+        {
+            "name":"Silver",
+            "price":"300",
+            "discription":"this is discrip",
+            "adventags":[
+                "No expire",
+                "Support all site",
+                "Images & Vector & Videos",
+                "Standard license",
+                "Quick access"
+            ]
+        },
+        {
+            "name":"Platium",
+            "price":"500",
+            "discription":"this is discrip",
+            "adventags":[
+                "No expire",
+                "Support all site",
+                "Images & Vector & Videos",
+                "Standard license",
+                "Quick access"
+            ]
+        },
+        {
+            "name":"Golden",
+            "price":"750",
+            "discription":"this is discrip",
+            "adventags":[
+                "No expire",
+                "Support all site",
+                "Images & Vector & Videos",
+                "Standard license",
+                "Quick access"
+            ]
+        },
+        {
+            "name":"Business",
+            "price":"1000",
+            "discription":"this is discrip",
+            "adventags":[
+                "No expire",
+                "Support all site",
+                "Images & Vector & Videos",
+                "Standard license",
+                "Quick access"
+            ]
+        }                    
+    ]	
+}

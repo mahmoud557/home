@@ -1,0 +1,110 @@
+subscrip-plan{
+	width: 340px;
+	height: 410px;
+	background: rgb(245 247 250);
+	margin: 14px 6px;
+	flex-shrink: 0;
+	border-radius: 14px;
+	box-shadow: 0 0 3px 0 #42414194;
+	max-width: 98%;
+}
+
+subscrip-plan{
+	display: flex;
+	flex-direction: column;
+}
+
+subscrip-plan>.name{
+	width:100%;
+	height: 44px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-family: system-ui;
+	font-size: 22px;
+	font-weight: 600;
+	color: rgb(245 247 250);
+	padding: 0px 22px;
+	background: rgb(198 56 67);
+	/* justify-content: center; */
+}
+subscrip-plan>.price{
+	width:100%;
+	height: 64px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-family: system-ui;
+	font-size: 16px;
+	font-weight: 600;
+	color: rgb(100 100 100);
+	padding: 0px 22px;
+	letter-spacing: 1px;
+	justify-content: center;
+	border-bottom: 1px solid #c8c8c8a1;
+}
+subscrip-plan>.price>span{
+	font-size: 17px;
+	padding-top: 20px;
+	font-weight: 900;
+}
+subscrip-plan>.price>b{
+	font-size: 50px;
+}
+subscrip-plan>.discrip{
+	width:100%;
+	height: 44px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-family: system-ui;
+	font-size: 12px;
+	/* font-weight: 600; */
+	color: rgb(80 80 80);
+	padding: 0px 18px;
+	letter-spacing: 1px;
+	line-height: 1.4;
+	border-bottom: 1px solid #c8c8c8a1;
+}
+subscrip-plan>.adventags{
+	flex:auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+}
+subscrip-plan>.adventags>div{
+	width: 80%;
+	height: 44px;
+	padding: 12px 12px;
+	font-size: 14px;
+	font-family: system-ui;
+	color: rgb(100 100 100);
+	font-weight: 600;
+	letter-spacing: 2px;
+	justify-content: flex-start;
+	border-bottom: 1px solid #d6d6d6a3;
+	cursor: pointer;
+}
+subscrip-plan>.contolers{
+	width: 50%;
+	height:40px;
+	/* background: rgb(52 52 53); */
+	align-self: center;
+	border-radius: 15px 15px 0px 0px;
+	box-shadow: 0 0 3px 0 black;
+	cursor: pointer;
+	font-family: system-ui;
+	font-size: 14px;
+	/* border: 1px solid #c63843; */
+	font-weight: 600;
+	color: rgb(100 100 100);
+	padding: 0px 18px;
+	letter-spacing: 1px;
+	transition: all 0.2s;
+}
+
+subscrip-plan>.contolers:hover{
+	background: rgb(198 56 67);
+	color:white;
+}

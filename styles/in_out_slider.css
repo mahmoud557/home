@@ -1,0 +1,12 @@
+in-out-slider{
+	width: 200px;
+	height: 0px;
+	background: white;
+	position: absolute;
+	top: 52px;
+	margin-top: 2px;
+	box-shadow: 0 0 3px 0 #00000061;
+	border-radius: 4px;
+	transition: all .5s;
+	z-index: 4;
+}

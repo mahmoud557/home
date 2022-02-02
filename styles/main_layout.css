@@ -1,0 +1,53 @@
+*{
+	box-sizing: border-box;
+	overflow: hidden;
+}
+/*
+*::selection {
+  background-color: #363535;
+}
+*/
+body{
+	width:100vw;
+	height:100vh;
+	margin:0;
+	padding: 0;
+	background: rgb(245 247 250);
+	position: fixed;
+}
+
+.main_holder{
+	flex:auto;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	padding: 0px;
+	position: absolute;
+	width: 100vw;
+	height: 80;
+	height: 100vh;
+}
+.main_holder>layers-holder{
+	width:100%;
+	height:100%;
+	display: flex;
+}
+
+.main_holder>layers-holder>.home{
+	width:100%;
+	height: 100%;
+	background: rgb(245 247 250);
+	display: flex;
+}
+.main_holder>layers-holder>.history{
+	width:100%;
+	height: 100%;
+	background: rgb(215 215 215);
+	display: flex;
+}
+.main_holder>layers-holder>.account{
+	width:100%;
+	height: 100%;
+	background: rgb(210 210 210);
+	display: flex;
+}
