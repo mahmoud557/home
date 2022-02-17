@@ -19,35 +19,35 @@ class Icons_Slider extends HTMLElement {
                 <c-icon src='home/icons/left_arrow.svg'  size='30' layer_target='home' class='active'></c-icon>
             </div>
             <div class='icons_holder center'>
-                <c-icon src='home/icon/adobestock.png'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/alamy.png'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/audiio.png'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/depositphotos.png'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/epidemicsound.jpg'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/filmsupply.png'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/freepik.jpg'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/icon8.png'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/istockphoto.png'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/lovepik.png'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/motionarray.jpg'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/ooopic.jpg'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/pikbest.jpg'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/pixelsquid.jpg'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/pngtree.jpg'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/poweredtemplate.png'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/shutterstock.png'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/soundsnap.png'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/stockgraphics.jpg'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/stockunlimited.png'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/storeshock.jpg'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/taopic.png'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/unlimphotos.jpg'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/utoimage.jpg'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/vecteezy.png'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/vectorgrove.jpg'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/vectorstock.png'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/vexels.jpg'  size='64' layer_target='home' class='active'></c-icon>
-                <c-icon src='home/icon/videoblocks.jpg'  size='64' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/adobestock.png'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/alamy.png'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/audiio.png'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/depositphotos.png'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/epidemicsound.jpg'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/filmsupply.png'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/freepik.jpg'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/icon8.png'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/istockphoto.png'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/lovepik.png'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/motionarray.jpg'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/ooopic.jpg'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/pikbest.jpg'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/pixelsquid.jpg'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/pngtree.jpg'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/poweredtemplate.png'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/shutterstock.png'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/soundsnap.png'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/stockgraphics.jpg'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/stockunlimited.png'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/storeshock.jpg'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/taopic.png'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/unlimphotos.jpg'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/utoimage.jpg'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/vecteezy.png'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/vectorgrove.jpg'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/vectorstock.png'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/vexels.jpg'  size='90' layer_target='home' class='active'></c-icon>
+                <c-icon src='home/icon/videoblocks.jpg'  size='90' layer_target='home' class='active'></c-icon>
             </div>
             <div class='right_button center'>
                 <c-icon src='home/icons/right_arrow.svg'  size='30' layer_target='home' class='active'></c-icon>

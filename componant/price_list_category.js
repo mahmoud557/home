@@ -17,7 +17,7 @@ class Price_List_Category extends HTMLElement {
     render(){
         this.innerHTML=`
             <top-div class='center'>
-                <c-icon src='${this.src}'  size='49' layer_target='home' class='active'></c-icon>
+                <c-icon src='${this.src}'  size='64' layer_target='home' class='active'></c-icon>
                 <span>${this.head_title}</span>
             </top-div>
             <bottom-div>

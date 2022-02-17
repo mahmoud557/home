@@ -30,14 +30,20 @@ class In_Out_Slider extends HTMLElement {
             res(true)
         })
     } 
-    async slide_out(to,method){
+    async slide_out(from,to,method){
         switch(method){
             case 't_to_b':
+                this.style.height='0'+'px';
+                this.style.transform='scaleY(0)';
+                this.style.top=from+'px';
                 this.style.height=to+'px';
-                this.slide_state='out';  
+                this.style.transform='scaleY(1)';
+                this.slide_state='out';
+                await this.show_content(.2)
                 break; 
             case 'c':
-                this.style.height=0+'px';
+                this.style.top=from+'px';
+                this.style.height='0'+'px';
                 this.style.display='none';
                 this.style.height=to+'px';
                 this.style.transform='scaleY(0)';
@@ -59,16 +65,17 @@ class In_Out_Slider extends HTMLElement {
     async slide_in(method){
         switch(method){
             case 't_to_b':
-                this.style.height=to+'px';
+                this.style.height='0'+'px';
                 this.slide_state='in';  
                 break; 
             case 'c':
+                this.style.height='0'+'px';
                 this.style.transform='scaleY(0)';
                 this.slide_state='in';
                 break;   
             case 'b_to_t':
                 await this.hid_content(.2)
-                this.style.height=0+'px';
+                this.style.height='0'+'px';
                 await this.delay(100)
                 this.style.transform='scaleY(0)';
                 this.slide_state='in';  

@@ -15,6 +15,7 @@ class Home_Part_Authed extends HTMLElement {
             this.handel_avatar_click()
             this.handel_avatar_button_click()            
             this.handel_click_on_go_to_dashboard()
+            this.handel_search()
             this.firest_connect_state=true
         }
     }
@@ -60,6 +61,14 @@ class Home_Part_Authed extends HTMLElement {
             </nav>      
             <top-div class='center' hazi_key='5'>
                 <search-par></search-par>
+                <in-out-slider>
+                    <left-div class='center'>
+                    </left-div>
+                    <right-div>
+                        <top-div></top-div>
+                        <bottom-div class='center'>Download Full Size</bottom-div>
+                    </right-div>
+                </in-out-slider>                
             </top-div>
             <bottom-div hazi_key='5'>
                 <div class='price_list'>
@@ -113,13 +122,66 @@ class Home_Part_Authed extends HTMLElement {
         }
     }
 
+    handel_search(){
+        this.children[1].children[0]
+        .addEventListener('input_change',async(e)=>{
+            if(e.value==''||e.value==' '){
+                console.log(true)
+                this.hid_url_info_slider()
+                return
+            }
+            try{
+                var url = new URL(e.value);
+                var url_info=await this.get_url_info(url)
+                this.render_url_info(url_info)
+            }catch(err){
+                console.log('unvalid link')
+                return
+            }
+            
+        })
+    }
+
+    render_url_info(url_info){
+        console.log(url_info)
+        this.children[1].children[1].children[0]
+        .innerHTML=`<c-icon src='${url_info.result.itemThumb}'  size='90' href='google.com' layer_target='home' class='active'></c-icon>`
+        this.children[1].children[1].children[1].children[0].innerHTML=`
+            <info-line key=${'Name'} value='${url_info.result.itemName||url_info.result.itemName=="N/A"?url_info.result.itemSlug:null}'></info-line>
+            <info-line key=${'Site'} value='${url_info.result.itemSite}'></info-line>
+            <info-line key=${'Price'} value='${url_info.result.price} LE'></info-line>
+        `
+        this.delay(200)
+        this.show_url_info_slider()
+    }
+
+    show_url_info_slider(){
+       this.children[1].children[1].slide_out('12','320','t_to_b') 
+    }
+
+    hid_url_info_slider(){
+        this.children[1].children[1].slide_in('b_to_t')  
+    }
+
+    async get_url_info(url){
+        var respond=await fetch('/get_url_info', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({url}),
+        })
+        respond=await respond.json()
+        return respond       
+    }  
+
     handel_avatar_click(){
         this.children[0].children[1].children[0]
         .addEventListener('click',()=>{
             var slide_state= this.children[0].children[1].children[1].slide_state;
             switch(slide_state){
                 case "in":
-                    this.children[0].children[1].children[1].slide_out('234','c')
+                    this.children[0].children[1].children[1].slide_out('76','234','c')
                     break;
                 case "out":
                     this.children[0].children[1].children[1].slide_in('b_to_t')
@@ -130,14 +192,27 @@ class Home_Part_Authed extends HTMLElement {
 
     handel_avatar_button_click(){
         for(var childern of this.children[0].children[1].children[1].children){
-            childern.addEventListener('click',(e)=>{
+            childern.addEventListener('click',async(e)=>{
                 var button_key=e.currentTarget.getAttribute('button_key');
                 if(button_key){
                     window.location.href = `/dashboard/#viow=${button_key}`;
+                }else{
+                    await this.send_log_out()
                 }
             })
         }
-    }   
+    }  
+
+    async send_log_out(){
+        var respond=await fetch('/manager_users/log_out', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        })
+        respond=await respond.json()
+        if(respond.logout_state){window.location.href = `/`}
+    }
 
     create_price_list_catagorys(){
         if(!this.data){return}
@@ -192,6 +267,13 @@ class Home_Part_Authed extends HTMLElement {
             return;
         } 
     }
+    
+    delay(time){
+        return new Promise((res,rej)=>{
+            setTimeout(()=>{res()},time)
+        })
+    }    
+
 
     attributeChangedCallback(name, oldValue, newValue){
         this[name]=newValue;

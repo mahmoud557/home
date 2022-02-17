@@ -31,7 +31,7 @@ class Icon extends HTMLElement {
             `
             this.content=icon_template.content
             this.content.children[0].style.maxWidth=`${this.getAttribute('size')}%`;
-            //this.content.children[0].style.maxHeight=`${this.getAttribute('size')}%`;
+            this.content.children[0].style.maxHeight=`${this.getAttribute('size')}%`;
             if(this.des){
                 this.content.children[1].style=`
                     width:${this.getAttribute('des_width')};

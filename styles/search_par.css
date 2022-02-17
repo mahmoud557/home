@@ -8,6 +8,7 @@ search-par{
 	box-shadow: 0 0 2px 0 #000000b0;
 	background: white;
 	direction: rtl;
+	/* margin-bottom: 40vh; */
 }
 
 search-par>left-div{

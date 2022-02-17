@@ -21,7 +21,7 @@ class Price_Line extends HTMLElement {
                  <span>LE</span>
             </div>
             <div class='logo center'>
-                <c-icon src='${this.src}'  size='50' layer_target='home' class='active'></c-icon>
+                <c-icon src='${this.src}'  size='70' layer_target='home' class='active'></c-icon>
             </div>
             <div class='link'>${this.link}</div>
         `       
