@@ -4,6 +4,7 @@ class Subscrip_Plan extends HTMLElement {
         this.name=this.getAttribute('name')
         this.price=this.getAttribute('price')
         this.discription=this.getAttribute('discription')
+        this.father;
         this.adventags=[];
         this.curancy='EGP';
         this.firest_connect_state=false;
@@ -12,6 +13,7 @@ class Subscrip_Plan extends HTMLElement {
     firest_connect(){
         if(!this.firest_connect_state){
             this.render()
+            this.handel_click_on_charge()
             this.create_and_render_adventags()
             this.firest_connect_state=true
         }
@@ -27,6 +29,7 @@ class Subscrip_Plan extends HTMLElement {
 
         `       
     }
+
     create_and_render_adventags(){
         //if(!this.data){return}
         for(var adventag of this.adventags){
@@ -35,7 +38,14 @@ class Subscrip_Plan extends HTMLElement {
             div.setAttribute('class','center')
             this.children[3].appendChild(div)
         }
-    }    
+    } 
+
+    handel_click_on_charge(){
+        if(this.on_charege_click){
+            this.children[4].addEventListener('click',(e)=>{this.on_charege_click(e)})
+        }
+    }   
+
     connectedCallback(){ 
         this.firest_connect()           
     }

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="99.999992"
+   height="99.998741"
+   viewBox="0 0 26.458331 26.458"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="k.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     units="px"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="3.6988215"
+     inkscape:cx="-14.19371"
+     inkscape:cy="55.693414"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid9"
+       originx="4.9999999e-07"
+       originy="0" />
+    <sodipodi:guide
+       position="17.197916,17.197584"
+       orientation="0.70710678,-0.70710678"
+       id="guide11" />
+    <sodipodi:guide
+       position="13.229166,13.228834"
+       orientation="-0.70710678,-0.70710678"
+       id="guide13" />
+    <sodipodi:guide
+       position="13.229166,21.166334"
+       orientation="0,-1"
+       id="guide15" />
+    <sodipodi:guide
+       position="5.2916669,11.905917"
+       orientation="1,0"
+       id="guide17" />
+    <sodipodi:guide
+       position="11.90625,5.2913336"
+       orientation="0,-1"
+       id="guide19" />
+    <sodipodi:guide
+       position="21.166666,11.905917"
+       orientation="1,0"
+       id="guide21" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <rect
+       x="20"
+       y="20.000002"
+       width="60"
+       height="60"
+       id="rect2271" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       id="rect12308"
+       width="26.458332"
+       height="26.458"
+       x="-5e-07"
+       y="0"
+       style="fill:#c1272d;fill-opacity:1;stroke-width:0.264581" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.55948427,0,0,0.5016028,-14.754647,-9.3590737)"
+       id="text13490"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:45.3333px;line-height:1.25;font-family:System-ui;-inkscape-font-specification:System-ui;text-align:center;white-space:pre;shape-inside:url(#rect2271);fill:#ffffff;fill-opacity:1;stroke:none"
+       x="9.5996094"
+       y="0"><tspan
+         x="36.851572"
+         y="60.834172"
+         id="tspan34904">K</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.55948427,0,0,0.5016028,-14.754647,-9.3590737)"
+       id="text13494"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:45.3333px;line-height:1.25;font-family:System-ui;-inkscape-font-specification:System-ui;text-align:center;white-space:pre;shape-inside:url(#rect2271);fill:#ffffff;fill-opacity:1;stroke:none"
+       x="9.5996094"
+       y="0" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.55948427,0,0,0.5016028,-14.754647,-9.3590737)"
+       id="text2269"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:45.3333px;line-height:1.25;font-family:System-ui;-inkscape-font-specification:System-ui;text-align:center;white-space:pre;shape-inside:url(#rect2271);fill:#ffffff;fill-opacity:1;stroke:none"
+       x="9.5996094"
+       y="0" />
+  </g>
+</svg>

@@ -16,6 +16,7 @@ class Home_Part extends HTMLElement {
             this.show_Sign_In_part()
             this.show_Sign_up_part()
             this.handel_search()
+            this.handel_click_on_download()
             this.firest_connect_state=true
         }
     }
@@ -125,7 +126,7 @@ class Home_Part extends HTMLElement {
         this.children[1].children[1].children[0]
         .innerHTML=`<c-icon src='${url_info.result.itemThumb}'  size='90' href='google.com' layer_target='home' class='active'></c-icon>`
         this.children[1].children[1].children[1].children[0].innerHTML=`
-            <info-line key=${'Name'} value='${url_info.result.itemName||url_info.result.itemName=="N/A"?url_info.result.itemSlug:null}'></info-line>
+            <info-line key=${'Name'} value='${!url_info.result.itemName||url_info.result.itemName=="N/A"?url_info.result.itemSlug:url_info.result.itemName}'></info-line>
             <info-line key=${'Site'} value='${url_info.result.itemSite}'></info-line>
             <info-line key=${'Price'} value='${url_info.result.price} LE'></info-line>
         `
@@ -134,12 +135,20 @@ class Home_Part extends HTMLElement {
     }
 
     show_url_info_slider(){
-       this.children[1].children[1].slide_out('12','320','t_to_b') 
+       this.children[1].children[1].slide_out('12','300','t_to_b') 
     }
 
     hid_url_info_slider(){
         this.children[1].children[1].slide_in('b_to_t')  
     }
+
+    handel_click_on_download(){
+        this.children[1].children[1].children[1].children[1]
+        .addEventListener('click',()=>{
+            this.children[0].children[1].children[1].click()
+        })
+    }
+
     async get_url_info(url){
         var respond=await fetch('/get_url_info', {
           method: 'POST',
@@ -177,13 +186,19 @@ class Home_Part extends HTMLElement {
         this.children[2].children[0].children[1].appendChild(this.music_category)
     }
 
+    handel_click_on_charge_button(){
+        this.father.children[0].children[1].children[1].click()
+    }
+
     create_and_render_suscrip_plans(){
         if(!this.data){return}
         for(var plan of this.data.subscrip_plans){
             var subscrip_plan=document.createElement('subscrip-plan')
             subscrip_plan.setAttribute('name',plan.name)        
             subscrip_plan.setAttribute('price',plan.price)        
-            subscrip_plan.setAttribute('discription',plan.discription)  
+            subscrip_plan.setAttribute('discription',plan.discription) 
+            subscrip_plan.father=this;
+            subscrip_plan.on_charege_click=this.handel_click_on_charge_button;
             subscrip_plan.adventags=plan.adventags
             this.children[2].children[1].children[1].appendChild(subscrip_plan)
         }

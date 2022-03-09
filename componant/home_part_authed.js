@@ -3,11 +3,13 @@ class Home_Part_Authed extends HTMLElement {
     constructor() {
         super();
         this.firest_connect_state=false;
+        this.user_picture;
     }
 
     async firest_connect(){
         if(!this.firest_connect_state){
             await this.get_data()
+            await this.get_account_picture()
             this.render()
             this.create_and_render_suscrip_plans()
             this.create_price_list_catagorys()
@@ -34,7 +36,7 @@ class Home_Part_Authed extends HTMLElement {
                    </right-div>
                 </left-div>
                 <right-div class='center'>
-                    <c-icon src='https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png'  size='80' layer_target='home' class='active'></c-icon>
+                    <c-icon src=${this.user_picture}  size='100' layer_target='home' class='active'></c-icon>
                     <in-out-slider>
                         <div class='center' button_key='Account'>
                             <c-icon src='/home/icons/account.svg'  size='40'></c-icon>
@@ -111,6 +113,24 @@ class Home_Part_Authed extends HTMLElement {
         `       
     }
 
+    async get_account_picture(){
+        try{
+            var respond=await fetch('get_account_picture', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              }
+            })
+            respond=await respond.json()
+            console.log(respond)
+            if(respond.err){return false}
+
+            this.user_picture=respond.result
+        }catch(err){
+            console.log(err)
+        }
+    }
+
     async get_data(){
         try{
             var response=await fetch('home/data.json');
@@ -147,7 +167,7 @@ class Home_Part_Authed extends HTMLElement {
         this.children[1].children[1].children[0]
         .innerHTML=`<c-icon src='${url_info.result.itemThumb}'  size='90' href='google.com' layer_target='home' class='active'></c-icon>`
         this.children[1].children[1].children[1].children[0].innerHTML=`
-            <info-line key=${'Name'} value='${url_info.result.itemName||url_info.result.itemName=="N/A"?url_info.result.itemSlug:null}'></info-line>
+            <info-line key=${'Name'} value='${!url_info.result.itemName||url_info.result.itemName=="N/A"?url_info.result.itemSlug:url_info.result.itemName}'></info-line>
             <info-line key=${'Site'} value='${url_info.result.itemSite}'></info-line>
             <info-line key=${'Price'} value='${url_info.result.price} LE'></info-line>
         `
@@ -156,7 +176,7 @@ class Home_Part_Authed extends HTMLElement {
     }
 
     show_url_info_slider(){
-       this.children[1].children[1].slide_out('12','320','t_to_b') 
+       this.children[1].children[1].slide_out('12','340','t_to_b') 
     }
 
     hid_url_info_slider(){
@@ -239,17 +259,44 @@ class Home_Part_Authed extends HTMLElement {
         this.children[2].children[0].children[1].appendChild(this.music_category)
     }
 
+    async get_payment_url(plan_name){
+        var payment_object={
+            plane_name:plan_name,
+        }
+        var respond=await fetch('/pay/get_payment_url', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({payment_object}),
+        })
+        respond=await respond.json()
+        return respond         
+    }
+
+    async handel_click_on_charge_button(){
+        var paygate_payment_object=await this.father.get_payment_url(this.name)
+        console.log(paygate_payment_object)
+        if(paygate_payment_object){
+            window.location=`https://fawaterkstage.com/invoice/${paygate_payment_object.invoiceId}/${paygate_payment_object.invoiceKey}/`
+            //window.location.href=paygate_payment_object.url
+        }
+    }  
+
     create_and_render_suscrip_plans(){
         if(!this.data){return}
         for(var plan of this.data.subscrip_plans){
             var subscrip_plan=document.createElement('subscrip-plan')
             subscrip_plan.setAttribute('name',plan.name)        
             subscrip_plan.setAttribute('price',plan.price)        
-            subscrip_plan.setAttribute('discription',plan.discription)  
+            subscrip_plan.setAttribute('discription',plan.discription) 
+            subscrip_plan.father=this;
+            subscrip_plan.on_charege_click=this.handel_click_on_charge_button;
             subscrip_plan.adventags=plan.adventags
             this.children[2].children[1].children[1].appendChild(subscrip_plan)
         }
     } 
+
 
     handel_click_on_go_to_dashboard(){
         this.children[0].children[0].children[1].children[0]
