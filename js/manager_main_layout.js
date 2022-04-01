@@ -1,6 +1,7 @@
 
 function manager_main_layout(){
 	this.main_holder=document.getElementById('main_holder');
+    this.allert_in_show=false;
 
     function handleCredentialResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential,response);
@@ -25,6 +26,64 @@ function manager_main_layout(){
             this.main_holder.children[0].children[0].appendChild(home)
         }
     })()
+
+
+    this.hid_all_allerts=()=>{
+        if(this.allert_in_show){
+            this.allert_in_show.remove()
+        }
+    }
+
+    this.show_allert_Without_feedback=(title,title_background,body,distroy_time)=>{
+        if(!this.allert_in_show){
+            this.allert_in_show=document.createElement('allert-without-feedback');
+            this.allert_in_show.allert_title=title;
+            this.allert_in_show.allert_body=body;
+            this.allert_in_show.distroy_time=distroy_time;
+            this.allert_in_show.title_background=title_background;
+            this.allert_in_show.father=this;
+            this.main_holder.appendChild(this.allert_in_show)           
+        }else{
+            this.allert_in_show.remove()
+            this.allert_in_show=document.createElement('allert-without-feedback');
+            this.allert_in_show.allert_title=title;
+            this.allert_in_show.allert_body=body;
+            this.allert_in_show.distroy_time=distroy_time;
+            this.allert_in_show.title_background=title_background;
+            this.allert_in_show.father=this;            
+            this.main_holder.appendChild(this.allert_in_show)
+        }
+    }
+
+    this.show_allert_With_feedback=(title,title_background,body,feedbacks)=>{
+        return new Promise((res,rej)=>{
+            if(!this.allert_in_show){
+                this.allert_in_show=document.createElement('allert-with-feedback');
+                this.allert_in_show.allert_title=title;
+                this.allert_in_show.allert_body=body;
+                this.allert_in_show.title_background=title_background;
+                this.allert_in_show.feedbacks=feedbacks;
+                this.allert_in_show.father=this;
+                this.allert_in_show
+                .addEventListener('feedback',(e)=>{
+                    res(e.feedback)
+                })
+                this.main_holder.appendChild(this.allert_in_show)           
+            }else{
+                this.allert_in_show.remove()
+                this.allert_in_show=document.createElement('allert-with-feedback');
+                this.allert_in_show.allert_title=title;
+                this.allert_in_show.allert_body=body;
+                this.allert_in_show.feedbacks=feedbacks;            
+                this.allert_in_show.father=this;
+                this.allert_in_show
+                .addEventListener('feedback',(e)=>{
+                    res(e.feedback)
+                })                      
+                this.main_holder.appendChild(this.allert_in_show)
+            }           
+        })
+    }    
 
 
 }

@@ -1,0 +1,25 @@
+loading-wheel{
+	width: 40px;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+loading-wheel>c-icon{
+	width:40px;
+	height: 40px;
+}
+loading-wheel>c-icon>img{
+	max-width: 16px !important;
+	animation: rotation 1.1s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

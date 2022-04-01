@@ -10,7 +10,24 @@
     justify-content: center;
     align-items: center;
 }
-
+.r-s-c{
+    display:flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.r-e-c{
+    display:flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+.select_none {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */      
+}
 .center-v{
     display:flex;
     flex-direction: column;

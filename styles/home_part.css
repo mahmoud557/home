@@ -408,7 +408,11 @@ home-part>bottom-div>.footer{
 	background: #363535;
 	position: relative;
 	bottom: 0px;
-	padding: 0px 24px;
+	padding: 0px 0px;
+	/* flex-wrap: wrap; */
+	/* overflow: auto; */
+	/* max-width: 600px; */
+	align-self: center;
 }
 
 home-part>bottom-div>.footer>left-div,home-part>bottom-div>.footer>right-div{
@@ -417,11 +421,12 @@ home-part>bottom-div>.footer>left-div,home-part>bottom-div>.footer>right-div{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	max-width: 520px;
+	max-width: 460px;
+	/* min-width: 400px; */
 }
 
 home-part>bottom-div>.footer>left-div>div{
-	width: 60%;
+	width: 80%;
 	height: 40px;
 	padding: 0px 14px;
 	flex-shrink: 0;

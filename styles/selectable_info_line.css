@@ -1,0 +1,53 @@
+selectable-info-line{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	font-family: system-ui;
+	margin: 2px 14px;
+	cursor: pointer;
+}
+selectable-info-line:hover{
+	filter: brightness(0.7);
+}
+
+selectable-info-line>div{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 6px;
+	cursor: pointer;
+	padding-top: 8px;
+}
+
+selectable-info-line>div>input{
+	cursor: pointer;
+}
+
+selectable-info-line>left-div{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(110 110 110);
+    font-family: system-ui;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+selectable-info-line>right-div{
+	flex: auto;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 16px;
+	color: rgba(100, 100, 100, 1);
+	letter-spacing: 1px;
+}
+
+selectable-info-line>right-div::selection{
+    color: white;
+}
