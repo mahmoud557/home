@@ -16,7 +16,7 @@ class Search_Par extends HTMLElement {
     render(){
         this.innerHTML=`
             <left-div>
-                <c-icon src='home/icons/search.svg' size=30 ></c-icon>
+                <c-icon src='/home/icons/search.svg' size=30 ></c-icon>
             </left-div>
             <right-div>
                 <input type='text' dir='auto' spellcheck="false"/>

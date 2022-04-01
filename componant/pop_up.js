@@ -97,7 +97,7 @@ class Pop_Up extends HTMLElement {
         this.content.children[0].children[0].style=`
             width: 100%;
             height: 100%;
-            background: rgb(50 50 50 / 60%);
+            background: rgb(28 28 28 / 90%);
             position: absolute;
             z-index: 1    
         `

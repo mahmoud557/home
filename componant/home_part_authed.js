@@ -1,4 +1,4 @@
-
+//https://elements.envato.com/ramadan-eid-greeting-J3PKAFY?fbclid=IwAR1ON0RAS7nK5hfYVRyoLwGX87Qz-PPNAc8luUG_mc-toBp5AfFz2hgSd-Y
 class Home_Part_Authed extends HTMLElement {
     constructor() {
         super();
@@ -11,6 +11,7 @@ class Home_Part_Authed extends HTMLElement {
             await this.get_data()
             await this.get_account_picture()
             this.render()
+            this.handel_click_on_pricing()
             this.create_and_render_suscrip_plans()
             this.create_price_list_catagorys()
             this.render_price_list_catagorys()
@@ -30,9 +31,9 @@ class Home_Part_Authed extends HTMLElement {
                        <c-icon src='home/icons/logo2.png'  size='80' layer_target='home' class='active'></c-icon>
                    </left-div>
                    <right-div >
-                       <div class='center'>Dashboard</div>
-                       <div class='center'>Pricing</div>
-                       <div class='center'>Help</div>
+                       <div class='center select_none'>Dashboard</div>
+                       <div class='center select_none'>Pricing</div>
+                       <div class='center select_none'>Help</div>
                    </right-div>
                 </left-div>
                 <right-div class='center'>
@@ -40,37 +41,30 @@ class Home_Part_Authed extends HTMLElement {
                     <in-out-slider>
                         <div class='center' button_key='Account'>
                             <c-icon src='/home/icons/account.svg'  size='40'></c-icon>
-                            <span>Account</span>                        
+                            <span select_none>Account</span>                        
                         </div>
                         <div class='center' button_key='Downloads'>
                             <c-icon src='/home/icons/downloads.svg'  size='40'></c-icon>
-                            <span>Downloads</span>                            
+                            <span select_none>Downloads</span>                            
                         </div>
                         <div class='center' button_key='Orders'>
                             <c-icon src='/home/icons/history.svg'  size='40'></c-icon>
-                            <span>Orders</span>                           
+                            <span select_none>Orders</span>                           
                         </div>
                         <div class='center' button_key='Help'>
                             <c-icon src='/home/icons/help.svg'  size='40'></c-icon>
-                            <span>Help</span>                           
+                            <span select_none>Help</span>                           
                         </div>
                         <div class='center'>
                             <c-icon src='/home/icons/log_out.svg'  size='40'></c-icon>
-                            <span>Sign Out</span>                           
+                            <span select_none>Sign Out</span>                           
                         </div>                       
                     </in-out-slider>
                 </right-div>            
             </nav>      
             <top-div class='center' hazi_key='5'>
                 <search-par></search-par>
-                <in-out-slider>
-                    <left-div class='center'>
-                    </left-div>
-                    <right-div>
-                        <top-div></top-div>
-                        <bottom-div class='center'>Download Full Size</bottom-div>
-                    </right-div>
-                </in-out-slider>                
+                <in-out-slider></in-out-slider>                
             </top-div>
             <bottom-div hazi_key='5'>
                 <div class='price_list'>
@@ -142,6 +136,13 @@ class Home_Part_Authed extends HTMLElement {
         }
     }
 
+    handel_click_on_pricing(){
+        this.children[0].children[0].children[1].children[1]
+        .addEventListener('click',()=>{
+            this.children[2].children[0].scrollIntoView();
+        })
+    }   
+
     handel_search(){
         this.children[1].children[0]
         .addEventListener('input_change',async(e)=>{
@@ -153,7 +154,8 @@ class Home_Part_Authed extends HTMLElement {
             try{
                 var url = new URL(e.value);
                 var url_info=await this.get_url_info(url)
-                this.render_url_info(url_info)
+                if(url_info.error){return}
+                this.create_and_render_url_info_holder(url_info,url)
             }catch(err){
                 console.log('unvalid link')
                 return
@@ -162,21 +164,19 @@ class Home_Part_Authed extends HTMLElement {
         })
     }
 
-    render_url_info(url_info){
+    create_and_render_url_info_holder(url_info,url){    
         console.log(url_info)
-        this.children[1].children[1].children[0]
-        .innerHTML=`<c-icon src='${url_info.result.itemThumb}'  size='90' href='google.com' layer_target='home' class='active'></c-icon>`
-        this.children[1].children[1].children[1].children[0].innerHTML=`
-            <info-line key=${'Name'} value='${!url_info.result.itemName||url_info.result.itemName=="N/A"?url_info.result.itemSlug:url_info.result.itemName}'></info-line>
-            <info-line key=${'Site'} value='${url_info.result.itemSite}'></info-line>
-            <info-line key=${'Price'} value='${url_info.result.price} LE'></info-line>
-        `
+        if(this.url_info_holder){this.url_info_holder.remove()}
+        this.url_info_holder=document.createElement('url-info-holder');
+        this.url_info_holder.url_info=url_info;
+        this.url_info_holder.url_info.url=url;
+        this.children[1].children[1].appendChild(this.url_info_holder)
         this.delay(200)
         this.show_url_info_slider()
     }
 
     show_url_info_slider(){
-       this.children[1].children[1].slide_out('12','340','t_to_b') 
+       this.children[1].children[1].slide_out('12','310','t_to_b') 
     }
 
     hid_url_info_slider(){
@@ -184,7 +184,7 @@ class Home_Part_Authed extends HTMLElement {
     }
 
     async get_url_info(url){
-        var respond=await fetch('/get_url_info', {
+        var respond=await fetch('/manager_get_stocks/get_url_info', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

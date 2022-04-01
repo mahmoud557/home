@@ -20,6 +20,7 @@ class Icon extends HTMLElement {
                 <img src=${this.getAttribute('src')}>
                 ${this.description()}
             `
+            this.classList.add('select_none')
             this.style=`
                 display:flex;
                 position:relative;

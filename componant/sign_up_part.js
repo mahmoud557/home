@@ -21,7 +21,7 @@ class Sign_up_Part extends HTMLElement {
     render(){
         this.innerHTML=`
             <top-div class='center'>
-                <c-icon src='home/icons/logo2.png'  size='62' layer_target='home' class='active'></c-icon>
+                <c-icon src='/home/icons/logo2.png'  size='62' layer_target='home' class='active'></c-icon>
             </top-div>
             <div class='allert_aria center hid' >this is allert</div>
             <bottom-div>
@@ -37,13 +37,13 @@ class Sign_up_Part extends HTMLElement {
                 <div class='sign_up_button center'>
                     Sign Up
                     <div class='whell center hid'>
-                        <c-icon src='home/icons/loading.svg'  size='90' layer_target='home' class='no_sellect active'></c-icon>
+                        <c-icon src='/home/icons/loading.svg'  size='90' layer_target='home' class='no_sellect active'></c-icon>
                     </div>
                 </div>
                 <div id="continue_with_google" class='continue_with_google center' data-type='icon' class='center'></div> 
                 <div class='last_texts center' >
                     <div class="hid">Forget My Password</div>
-                    <div>Sign In</div>
+                    <div class='select_none'>Sign In</div>
                 </div>
             </bottom-div>
         `
@@ -161,7 +161,7 @@ class Sign_up_Part extends HTMLElement {
     }    
 
     async render_sign_in_with_google_button(){
-      await this.delay(100)
+      await this.delay(50)
       var width=document.getElementById("continue_with_google").clientWidth
       google.accounts.id.renderButton(
         document.getElementById("continue_with_google"),

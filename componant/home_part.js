@@ -8,8 +8,11 @@ class Home_Part extends HTMLElement {
         if(!this.firest_connect_state){
             await this.get_data()
             this.render()
+            this.handel_click_on_pricing()
             this.create_and_render_suscrip_plans()
             this.create_price_list_catagorys()
+            this.create_forget_password_part()
+            this.create_reseat_password_part()
             this.render_price_list_catagorys()
             this.create_Sign_In_part()
             this.create_Sign_up_part()
@@ -17,6 +20,7 @@ class Home_Part extends HTMLElement {
             this.show_Sign_up_part()
             this.handel_search()
             this.handel_click_on_download()
+            this.go_to_viow_if_exest_in_location()
             this.firest_connect_state=true
         }
     }
@@ -26,16 +30,16 @@ class Home_Part extends HTMLElement {
             <nav class='center' hazi_key='5'>
                 <left-div>
                    <left-div class='center'>
-                       <c-icon src='home/icons/logo2.png'  size='80' layer_target='home' class='active'></c-icon>
+                       <c-icon src='/home/icons/logo2.png'  size='80' layer_target='home' class='active'></c-icon>
                    </left-div>
                    <right-div >
-                       <div class='center'>Pricing</div>
-                       <div class='center'>Help</div>
+                       <div class='center select_none'>Pricing</div>
+                       <div class='center select_none'>Help</div>
                    </right-div>
                 </left-div>
                 <right-div class='center'>
-                    <right-div class='center'>Sign Up</right-div>
-                    <left-div class='center'>Sign In</left-div>
+                    <right-div class='center select_none'>Sign Up</right-div>
+                    <left-div class='center select_none'>Sign In</left-div>
                 </right-div>             
             </nav>      
             <top-div class='center' hazi_key='5'>
@@ -70,29 +74,51 @@ class Home_Part extends HTMLElement {
                 <div class='footer center'>
                     <left-div>
                         <div class='logo'>
-                            <c-icon src='home/icons/white-logo.png'  size='46' layer_target='home' class='active'></c-icon>
+                            <c-icon src='/home/icons/white-logo.png'  size='100' layer_target='home' class='active'></c-icon>
                         </div>
                         <div class='number'>PH : 0101955662</div>
                         <div class='email'>mamoth@gmail.com</div>
                         <div class='icons'>
-                            <c-icon src='home/icons/fac.svg'  size='90' href='google.com' layer_target='home' class='active'></c-icon>
-                            <c-icon src='home/icons/ins.svg'  size='90' layer_target='home' class='active'></c-icon>
-                            <c-icon src='home/icons/whats.svg'  size='90' layer_target='home' class='active'></c-icon>
+                            <c-icon src='/home/icons/fac.svg'  size='90' href='google.com' layer_target='home' class='active'></c-icon>
+                            <c-icon src='/home/icons/ins.svg'  size='90' layer_target='home' class='active'></c-icon>
+                            <c-icon src='/home/icons/whats.svg'  size='90' layer_target='home' class='active'></c-icon>
                         </div>
                     </left-div>
                     <right-div class='center'>
-                        <c-icon src='home/icons/payment-logo.png'  size='90' layer_target='home' class='active'></c-icon>
+                        <c-icon src='/home/icons/payment-logo.png'  size='90' layer_target='home' class='active'></c-icon>
                     </right-div>
                 </div>
             </bottom-div>
-
             <pop-up display_state='none' hazi='5' id='home_popup'></pop-up>
         `       
     }
 
+    go_to_viow_if_exest_in_location(){
+        if(location.hash==''||location.hash==" "){return}
+        switch (location.hash) {
+            case '#reseat_password':
+                    var pathname_array= location.pathname.split('/');
+                    if(pathname_array[2]=="reseat_password"){
+                        this.reseat_password_part.email=pathname_array[5];
+                        this.reseat_password_part.token=pathname_array[4];
+                        this.children[3].setAttribute('disable','true')
+                        this.children[3].disable=true;
+                        this.children[3].show(this.reseat_password_part)
+                    }
+                break;
+            case '#sign_in':
+                    this.children[3].show(this.sign_in_part)
+                    history.replaceState(null, null, ' ');
+                break;                
+            default:
+                // statements_def
+                break;
+        }
+    }
+
     async get_data(){
         try{
-            var response=await fetch('home/data.json');
+            var response=await fetch('/home/data.json');
             if(response.ok){
                 this.data=await response.json()
             }else{this.data=false}      
@@ -101,11 +127,17 @@ class Home_Part extends HTMLElement {
         }
     }
 
+    handel_click_on_pricing(){
+        this.children[0].children[0].children[1].children[0]
+        .addEventListener('click',()=>{
+            this.children[2].children[0].scrollIntoView();
+        })
+    }
+
     handel_search(){
         this.children[1].children[0]
         .addEventListener('input_change',async(e)=>{
             if(e.value==''||e.value==' '){
-                console.log(true)
                 this.hid_url_info_slider()
                 return
             }
@@ -164,18 +196,21 @@ class Home_Part extends HTMLElement {
     create_price_list_catagorys(){
         if(!this.data){return}
         this.Photo_category=document.createElement('price-list-category')
-        this.Photo_category.setAttribute('src','home/icons/img.svg')
+        this.Photo_category.setAttribute('src','/home/icons/img.svg')
         this.Photo_category.setAttribute('head_title','Photo')
+        this.Photo_category.setAttribute('class','select_none')
         this.Photo_category.price_lines=this.data.photo_price_lines
 
         this.video_category=document.createElement('price-list-category')
-        this.video_category.setAttribute('src','home/icons/video.svg')
+        this.video_category.setAttribute('src','/home/icons/video.svg')
         this.video_category.setAttribute('head_title','Video')
+        this.video_category.setAttribute('class','select_none')
         this.video_category.price_lines=this.data.video_price_lines
 
         this.music_category=document.createElement('price-list-category')
-        this.music_category.setAttribute('src','home/icons/music.svg')
+        this.music_category.setAttribute('src','/home/icons/music.svg')
         this.music_category.setAttribute('head_title','music') 
+        this.music_category.setAttribute('class','select_none') 
         this.music_category.price_lines=this.data.music_price_lines     
     }
 
@@ -212,6 +247,16 @@ class Home_Part extends HTMLElement {
     create_Sign_up_part(){
         this.sign_up_part=document.createElement('sign-up-part');
         this.sign_up_part.father=this;
+    }
+
+    create_forget_password_part(){
+        this.forget_password_part=document.createElement('forget-password-part');
+        this.forget_password_part.father=this;
+    }
+
+    create_reseat_password_part(){
+        this.reseat_password_part=document.createElement('reseat-password-part');
+        this.reseat_password_part.father=this;
     }
 
     show_Sign_In_part(){
