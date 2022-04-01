@@ -12,7 +12,7 @@ function manager_main_layout(){
             client_id: "530638225218-0bn200lkl8nqoionnv6ns2og60calf43.apps.googleusercontent.com",
             callback: handleCredentialResponse,
             ux_mode:'redirect',
-            login_uri:'http://localhost:3000/manager_users/contanuio_with_google'
+            login_uri:'https://grafeeky.glitch.me/manager_users/contanuio_with_google'
         });
     }
 
